@@ -6,7 +6,7 @@
     "configurations": [
         {
             "name": "Lists",
-            "type": "gdb",
+            "type": "cppdbg",
             "request": "launch",
             "program": "/project/Lists/build/Debug/lists",
             "args": [],
