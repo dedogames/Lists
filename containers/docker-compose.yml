@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+
+  lists:
+    image: lists:debug
+    networks:
+      - local
+    volumes:
+      - ../../Lists/src:/project/Lists/src
+      - ../../Lists/CMakeLists.txt:/project/Lists/CMakeLists.txt
+      - ../../Lists/.gitignore:/project/Lists/.gitignore
+      - ../../Lists/.git:/project/Lists/.git
+      - ../../Lists/containers/launch.json:/project/Lists/.vscode/launch.json
+      - ../../Lists/containers/settings.json:/project/Lists/.vscode/settings.json
+      - ../../Lists/containers:/project/Lists/containers
+      - /root/.ssh:/root/.ssh # Forward local machine SSH key to docker 
+networks:
+  local:
+    driver: bridge
+
+#build
+#docker-compose -f containers/debug/docker-compose.yml up -d
